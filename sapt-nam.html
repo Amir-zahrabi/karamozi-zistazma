@@ -4,28 +4,6 @@
          <link href="sapt-namm.css" rel="stylesheet" type="text/css">
          <meta name="viewport" content="width=device-width, initial-scale=1.0">
          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-           <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
-<script>
-  emailjs.init("ygIxVkOjwRQvudO9W");
-
-  const form = document.getElementById("sapt-nam");
-
-  form.addEventListener("submit", function(e) {
-    e.preventDefault();
-
-    emailjs.sendForm(
-      "service_ltzqms6",
-      "template_pilzdlm",
-      this
-    ).then(() => {
-      // بعد از ارسال اطلاعات → برو پرداخت
-      window.location.href = "https://PAYMENT-LINK";
-    }).catch(err => {
-      alert("ارسال اطلاعات ناموفق بود ❌");
-      console.log(err);
-    });
-  });
-</script>
     </head>
     <body>
         <menu>
