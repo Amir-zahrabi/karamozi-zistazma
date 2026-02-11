@@ -1,0 +1,55 @@
+ <html>
+    <head>
+         <title>باشگاه کارآموزی زیست آزما</title>
+         <link href="sapt-namm.css" rel="stylesheet" type="text/css">
+         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+           <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+<script>
+  emailjs.init("ygIxVkOjwRQvudO9W");
+
+  const form = document.getElementById("sapt-nam");
+
+  form.addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    emailjs.sendForm(
+      "service_ltzqms6",
+      "template_pilzdlm",
+      this
+    ).then(() => {
+      // بعد از ارسال اطلاعات → برو پرداخت
+      window.location.href = "https://PAYMENT-LINK";
+    }).catch(err => {
+      alert("ارسال اطلاعات ناموفق بود ❌");
+      console.log(err);
+    });
+  });
+</script>
+    </head>
+    <body>
+        <menu>
+             <ul>
+                <li class="li1"><a href="index.html">صفحه اصلی</a></li>
+                <li ><a href="sapt-nam.html">ثبت نام</a></li>
+                <li ><a href="">ارتباط با ما</a></li>
+             </ul>
+        </menu>
+        <h1> : مراجعه کنندگان محترم لطفا به نکات زیر توجه </h1>
+        <p class="pp">برای ثبت نام در دوره های حضوری فرم زیر را پر کنید</p>
+        <p class="pp">مبلغ پیش پرداخت برای ثبت نام 500000 تومان است</p>
+        <p class="pp">بعد از واریز پیش پرداخت و پر کردن فرم دکمه ثبت نام را بزنید تا مجوعه زیست آزما در عرض 48 ساعت با شما تماس بگیر</p>
+        <p class="pp">فقط با پر کردن فرم و واریز کردم پیش پرداخت ثبت  نام شما قطعی میشود</p>
+        <div class="form-sabt-nam">
+            <p class="pa">نام و نام خانوادکی</p>
+            <input type="text" name="fullname" required>
+            <p class="pa">شماره تلفن</p>
+            <input type="tel" name="phone" required>
+            <p class="pa">کدملی</p>
+            <input type="text" name="nationalcode">
+            
+            
+            <button id="sapt-nam"><a href="" class="as"> ثبت نام </a></button>
+        </div>
+    </body>
+ </html>
