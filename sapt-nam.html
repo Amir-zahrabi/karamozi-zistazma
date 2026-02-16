@@ -5,26 +5,33 @@
          <meta name="viewport" content="width=device-width, initial-scale=1.0">
          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
            <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
-<script>
-  emailjs.init("ygIxVkOjwRQvudO9W");
+     
+<script type="text/javascript"
+  src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 
-  const form = document.getElementById("sapt-nam");
+<script type="text/javascript">
+  emailjs.init('ygIxVkOjwRQvudO9W')
+</script>
+<script>const btn = document.getElementById('sapt-nam');
 
-  form.addEventListener("submit", function(e) {
-    e.preventDefault();
+document.getElementById('form')
+ .addEventListener('submit', function(event) {
+   event.preventDefault();
 
-    emailjs.sendForm(
-      "service_ltzqms6",
-      "template_pilzdlm",
-      this
-    ).then(() => {
-      // بعد از ارسال اطلاعات → برو پرداخت
-      window.location.href = "https://PAYMENT-LINK";
-    }).catch(err => {
-      alert("ارسال اطلاعات ناموفق بود ❌");
-      console.log(err);
+   btn.value = 'Sending...';
+
+   const serviceID = 'default_service';
+   const templateID = 'template_pilzdlm';
+
+   emailjs.sendForm(serviceID, templateID, this)
+    .then(() => {
+      btn.value = 'Send Email';
+      alert('Sent!');
+    }, (err) => {
+      btn.value = 'Send Email';
+      alert(JSON.stringify(err));
     });
-  });
+});
 </script>
     </head>
     <body>
@@ -49,7 +56,7 @@
             <input type="text" name="nationalcode">
             
             
-            <button id="sapt-nam"><a href="" class="as"> ثبت نام </a></button>
+            <button id="sapt-nam" value="send email" type="submit"><a href="" class="as"> ثبت نام </a></button>
         </div>
     </body>
  </html>
