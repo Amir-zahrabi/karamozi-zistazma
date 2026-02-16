@@ -1,18 +1,12 @@
  <html>
     <head>
          <title>باشگاه کارآموزی زیست آزما</title>
-         <link href="sapt-nam.css" rel="stylesheet" type="text/css">
+         <link href="sapt-namm.css" rel="stylesheet" type="text/css">
          <meta name="viewport" content="width=device-width, initial-scale=1.0">
          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
            <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
-     
-<script type="text/javascript"
-  src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-
-<script type="text/javascript">
-  emailjs.init('ygIxVkOjwRQvudO9W')
-</script>
-<script>const btn = document.getElementById('sapt-nam');
+<script>
+const btn = document.getElementById('button');
 
 document.getElementById('form')
  .addEventListener('submit', function(event) {
@@ -25,7 +19,7 @@ document.getElementById('form')
 
    emailjs.sendForm(serviceID, templateID, this)
     .then(() => {
-      btn.value = 'Send Email';
+      btn.value = 'Send';
       alert('Sent!');
     }, (err) => {
       btn.value = 'Send Email';
@@ -47,16 +41,29 @@ document.getElementById('form')
         <p class="pp">مبلغ پیش پرداخت برای ثبت نام 500000 تومان است</p>
         <p class="pp">بعد از واریز پیش پرداخت و پر کردن فرم دکمه ثبت نام را بزنید تا ثبت نام شما در مجموعه زیست آزما تکمیل شود</p>
         <p class="pp">فقط با پر کردن فرم و واریز کردم پیش پرداخت ثبت  نام شما قطعی میشود</p>
-        <div class="form-sabt-nam">
-            <p class="pa">نام و نام خانوادکی</p>
-            <input type="text" name="fullname" required>
-            <p class="pa">شماره تلفن</p>
-            <input type="tel" name="phone" required>
-            <p class="pa">کدملی</p>
-            <input type="text" name="nationalcode">
-            
-            
-            <button id="sapt-nam" value="send email" type="submit"><a href="" class="as"> ثبت نام </a></button>
-        </div>
+<form id="form">
+  <div class="field">
+    <label for="name" >نام و نام خانوادگی</label>
+    <input type="text" name="name" id="name">
+  </div>
+  <div class="field">
+    <label for="fullname" >کدملی</label>
+    <input type="text" name="fullname" id="fullname">
+  </div>
+  <div class="field">
+    <label for="phone" >تلفن همراه</label>
+    <input type="text" name="phone" id="phone">
+  </div>
+
+  <input type="submit" id="button" value="Send" >
+</form>
+
+<script type="text/javascript"
+  src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+<script type="text/javascript">
+  emailjs.init('ygIxVkOjwRQvudO9W')
+</script>
+
     </body>
  </html>
