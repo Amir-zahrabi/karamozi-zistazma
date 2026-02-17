@@ -5,8 +5,7 @@
          <meta name="viewport" content="width=device-width, initial-scale=1.0">
          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
            <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
-<script>
-const btn = document.getElementById('button');
+<script>const btn = document.getElementById('button');
 
 document.getElementById('form')
  .addEventListener('submit', function(event) {
@@ -19,7 +18,7 @@ document.getElementById('form')
 
    emailjs.sendForm(serviceID, templateID, this)
     .then(() => {
-      btn.value = 'Send';
+      btn.value = 'Send Email';
       alert('Sent!');
     }, (err) => {
       btn.value = 'Send Email';
@@ -43,15 +42,15 @@ document.getElementById('form')
         <p class="pp">فقط با پر کردن فرم و واریز کردم پیش پرداخت ثبت  نام شما قطعی میشود</p>
 <form id="form">
   <div class="field">
-    <label for="name">نام و نام خانوادگی</label>
+    <label for="name">name</label>
     <input type="text" name="name" id="name">
   </div>
   <div class="field">
-    <label for="fullname">کدملی</label>
+    <label for="fullname">fullname</label>
     <input type="text" name="fullname" id="fullname">
   </div>
   <div class="field">
-    <label for="phone"> شماره تلفن </label>
+    <label for="phone">phone</label>
     <input type="text" name="phone" id="phone">
   </div>
 
@@ -59,6 +58,11 @@ document.getElementById('form')
 </form>
 
 <script type="text/javascript"
+  src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+<script type="text/javascript">
+  emailjs.init('ygIxVkOjwRQvudO9W')
+</script> type="text/javascript"
   src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 
 <script type="text/javascript">
