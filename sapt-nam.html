@@ -5,24 +5,29 @@
          <meta name="viewport" content="width=device-width, initial-scale=1.0">
          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
            <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
-<script>const btn = document.getElementById('button');
+<script>document.addEventListener("DOMContentLoaded", function () {
 
-document.getElementById('form')
- .addEventListener('submit', function(event) {
-   event.preventDefault();
+  emailjs.init("ygIxVkOjuRQvudO9W"); // public key
 
-   btn.value = 'Sending...';
+  const btn = document.getElementById("button");
 
-   const serviceID = 'default_service';
-   const templateID = 'template_pilzdlm';
+  document.getElementById("form")
+    .addEventListener("submit", function (event) {
+      event.preventDefault();
 
-   emailjs.sendForm(serviceID, templateID, this)
-    .then(() => {
-      btn.value = 'Send Email';
-      alert('Sent!');
-    }, (err) => {
-      btn.value = 'Send Email';
-      alert(JSON.stringify(err));
+      btn.value = "Sending...";
+
+      const serviceID = "default_service";
+      const templateID = "template_pilzdlm";
+
+      emailjs.sendForm(serviceID, templateID, this)
+        .then(() => {
+          btn.value = "Send Email";
+          alert("Sent!");
+        }, (err) => {
+          btn.value = "Send Email";
+          alert(JSON.stringify(err));
+        });
     });
 });</script>
 <script type="text/javascript"
